@@ -2,8 +2,11 @@
     "included": {
         "demographicFrequency": ["ethnicity"],
         "provenance": ["temporal"],
+        "temporal": ["startDate", "endDate", "timeLag"],
         "coverage": ["typicalAgeRangeMin", "typicalAgeRangeMax", "datasetCompleteness"],
-        "dataCustodian": ["identifier", "name", "contactPoint", "description"]
+        "dataCustodian": ["identifier", "name", "contactPoint", "description"],
+        "accessibility": ["access"],
+        "access": ["accessRights"]
     },
     "visibleSections": [
       "welcome",
@@ -25,6 +28,15 @@
     ],
     "summaryOrder": ["title", "leadResearcher", "leadResearchInstitute", "contactPoint", "doiName", "abstract", "accessRights",
       "dataCustodian", "populationSize", "keywords", "datasetAliases"],
+    "required": [
+      "identifier",
+      "version",
+      "revisions",
+      "issued",
+      "modified",
+      "summary",
+      "accessibility"
+    ],
     "$defs": {
       "Access": {
         "additionalProperties": false,
@@ -45,7 +57,7 @@
         }
       },
       "Coverage": {
-        "required": []
+        "required": ["typicalAgeRangeMin", "typicalAgeRangeMax"]
       },
       "DataColumn": {
         "properties": {
@@ -365,7 +377,7 @@
     },
     "properties": {
         "welcome": {
-          "title": "Guide to Uploading and Modifying Metadata",
+          "title": "Guide to Uploading and Modifying Metadata - testing",
           "description": "IF this is a new dataset, you can either input the metadata manually or, if you have done this before, you can directly upload a json with some or all of the required information."
         },
         "version": {
