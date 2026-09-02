@@ -241,7 +241,7 @@
               "guidance": "- Use the **title** the dataset is best known by. Expand **acronyms**, adding the acronym in brackets.\\n- Use a **unique** title. adding a **prefix** with your organisation name or identifier where necessary"
             },
             "abstract": {
-              "description": "Optimal length one paragraph. Limited to 255 characters. Avoid long sentences and abbreviations.",
+              "description": "Optimal length one paragraph. Limited to 500 characters. Avoid long sentences and abbreviations.",
               "examples": [
                 "Anonymised real-world clinical data from patients with advanced or metastatic non-small cell lung cancer.  Data includes treatments, imaging, long-term follow up and outcomes. Database size = 774 in 2025 + 150 patients/year."
               ],
