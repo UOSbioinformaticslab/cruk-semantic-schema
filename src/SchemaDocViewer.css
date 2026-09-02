@@ -1,6 +1,16 @@
-/* SchemaDocViewer.css - Accessible & Premium Schema Documentation Styling */
+/* SchemaDocViewer.css - CRUK Brand System & Accessible Responsive Formatting */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+/* CRUK Brand Tokens */
+:root {
+    --cruk-blue: #00468C;      /* Primary Navy Blue */
+    --cruk-darkblue: #002B5B;  /* Dark Blue */
+    --cruk-pink: #D10A6F;      /* Primary Accent Pink */
+    --cruk-light-bg: #F0F2F5;  /* Off-White Background */
+    --cruk-dark-text: #2A2A2A; /* Dark Text */
+    --cruk-border: #CBD5E1;   /* Border Gray */
+}
 
 /* Screen Reader Only Utility */
 .sdv-sr-only {
@@ -15,12 +25,12 @@
     border: 0;
 }
 
-/* Skip Link for Keyboard Navigation */
+/* Keyboard Skip Link (Actionable Link) */
 .sdv-skip-link {
     position: absolute;
     top: -100px;
     left: 1rem;
-    background: #2563eb;
+    background: var(--cruk-pink);
     color: #ffffff;
     padding: 0.75rem 1.25rem;
     font-weight: 700;
@@ -32,30 +42,35 @@
 .sdv-skip-link:focus {
     top: 1rem;
     outline: 3px solid #ffffff;
-    box-shadow: 0 0 0 5px #2563eb;
+    box-shadow: 0 0 0 5px var(--cruk-pink);
 }
 
 /* Focus Visible Rings for Keyboard Accessibility */
 :focus-visible {
-    outline: 3px solid #2563eb !important;
+    outline: 3px solid var(--cruk-pink) !important;
     outline-offset: 2px !important;
 }
 
 .sdv-container {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    color: #1e293b;
-    background-color: #f8fafc;
+    color: var(--cruk-dark-text);
+    background-color: var(--cruk-light-bg);
     min-height: 100vh;
     line-height: 1.6;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
-/* Header Banner */
+/* Header Banner with CRUK Signature Gradient */
 .sdv-header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, var(--cruk-blue) 0%, var(--cruk-pink) 100%);
     color: #ffffff;
     padding: 1.5rem 2rem;
-    border-bottom: 1px solid #334155;
+    border-bottom: 2px solid var(--cruk-darkblue);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .sdv-header-inner {
@@ -66,35 +81,40 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    box-sizing: border-box;
 }
 
+/* Non-Interactive Flat Metadata Tag (Not a Button) */
 .sdv-badge-tag {
-    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    background: rgba(255, 255, 255, 0.2);
     color: #ffffff;
     font-size: 0.7rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 0.25rem 0.6rem;
-    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: default;
 }
 
 .sdv-header-title {
     font-size: 1.4rem;
     font-weight: 800;
-    color: #f8fafc;
+    color: #ffffff;
     margin: 0;
 }
 
 .sdv-header-sub {
     font-size: 0.85rem;
-    color: #cbd5e1;
+    color: rgba(255, 255, 255, 0.9);
     margin-top: 0.25rem;
 }
 
+/* Actionable Buttons */
 .sdv-btn-link {
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     min-height: 44px;
     padding: 0.5rem 1.1rem;
     border-radius: 8px;
@@ -103,25 +123,31 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .sdv-btn-base {
-    background: #334155;
-    color: #f8fafc;
-    border: 1px solid #475569;
+    background: #ffffff;
+    color: var(--cruk-blue);
+    border: 1px solid #ffffff;
 }
 .sdv-btn-base:hover {
-    background: #475569;
-    color: #ffffff;
+    background: #f8fafc;
+    color: var(--cruk-darkblue);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .sdv-btn-primary {
-    background: #2563eb;
+    background: var(--cruk-darkblue);
     color: #ffffff;
-    border: 1px solid #3b82f6;
+    border: 1px solid var(--cruk-darkblue);
 }
 .sdv-btn-primary:hover {
-    background: #1d4ed8;
+    background: #001e40;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Stat Cards */
@@ -132,61 +158,68 @@
     max-width: 1400px;
     margin: 1.5rem auto 0 auto;
     padding: 0 1.5rem;
+    box-sizing: border-box;
 }
 
 .sdv-stat-card {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--cruk-border);
     border-radius: 14px;
     padding: 1.25rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
 }
 
 .sdv-stat-num {
     font-size: 1.8rem;
     font-weight: 800;
-    color: #0f172a;
+    color: var(--cruk-blue);
     line-height: 1;
 }
 
 .sdv-stat-label {
     font-size: 0.75rem;
     font-weight: 700;
-    color: #475569;
+    color: var(--cruk-dark-text);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-top: 0.4rem;
 }
 
-/* Layout */
+/* Layout Container */
 .sdv-layout {
     max-width: 1400px;
     margin: 1.5rem auto;
     padding: 0 1.5rem 3rem 1.5rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
+    box-sizing: border-box;
 }
 
-/* Sidebar */
+/* Sidebar Navigation */
 .sdv-sidebar {
-    width: 280px;
+    width: 290px;
     flex-shrink: 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .sdv-sidebar-sticky {
     position: sticky;
     top: 5rem;
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--cruk-border);
     border-radius: 16px;
     padding: 1.25rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
 }
 
 .sdv-sidebar-title {
     font-size: 0.75rem;
     font-weight: 800;
-    color: #475569;
+    color: var(--cruk-blue);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 0.75rem;
@@ -200,43 +233,96 @@
     gap: 0.25rem;
 }
 
+/* Actionable Sidebar Navigation Tree Item */
+.sdv-nav-group {
+    display: flex;
+    flex-direction: column;
+}
+
 .sdv-nav-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 44px;
-    padding: 0.6rem 0.8rem;
-    border-radius: 10px;
+    min-height: 40px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #1e293b;
+    color: var(--cruk-dark-text);
     text-decoration: none;
     transition: all 0.15s ease;
+    cursor: pointer;
 }
 .sdv-nav-item:hover {
-    background: #eff6ff;
-    color: #1d4ed8;
+    background: #EBF3FA;
+    color: var(--cruk-blue);
 }
 
+.sdv-nav-subitem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 36px;
+    padding: 0.4rem 0.75rem 0.4rem 2rem;
+    border-left: 2px solid #E2E8F0;
+    margin-left: 0.8rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #475569;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+.sdv-nav-subitem:hover {
+    background: #F1F5F9;
+    color: var(--cruk-pink);
+    border-left-color: var(--cruk-pink);
+}
+
+/* Tree Expansion Toggle Button */
+.sdv-tree-toggle {
+    background: transparent;
+    border: none;
+    color: var(--cruk-blue);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.4rem;
+    transition: transform 0.2s ease;
+}
+.sdv-tree-toggle:hover {
+    background: #EBF3FA;
+}
+
+/* Non-Interactive Numeric Indicator Badge (Not a Button) */
 .sdv-nav-count {
     font-size: 0.75rem;
     font-family: 'Fira Code', monospace;
     background: #f1f5f9;
-    color: #334155;
-    padding: 0.15rem 0.5rem;
-    border-radius: 999px;
+    color: var(--cruk-dark-text);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    border: 1px solid var(--cruk-border);
+    cursor: default;
 }
 
-/* Main Content */
+/* Main Content Column */
 .sdv-main {
-    flex: 1;
+    flex: 1 1 600px;
     min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-/* Search Bar */
+/* Search & Filter Toolbar */
 .sdv-toolbar {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--cruk-border);
     border-radius: 16px;
     padding: 1.25rem;
     margin-bottom: 1.5rem;
@@ -244,29 +330,37 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .sdv-search-box {
     position: relative;
-    flex: 1;
+    flex: 1 1 300px;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .sdv-search-input {
     width: 100%;
+    max-width: 100%;
     min-height: 48px;
     padding: 0.75rem 1rem 0.75rem 2.6rem;
     background: #f8fafc;
     border: 1px solid #94a3b8;
     border-radius: 12px;
     font-size: 0.95rem;
-    color: #0f172a;
+    color: var(--cruk-dark-text);
     outline: none;
     transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 .sdv-search-input:focus {
     background: #ffffff;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    border-color: var(--cruk-pink);
+    box-shadow: 0 0 0 3px rgba(209, 10, 111, 0.2);
 }
 
 .sdv-search-icon {
@@ -274,7 +368,7 @@
     left: 0.9rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #64748b;
+    color: var(--cruk-blue);
     font-size: 0.95rem;
     pointer-events: none;
 }
@@ -286,45 +380,51 @@
     gap: 0.5rem;
     border-top: 1px solid #f1f5f9;
     padding-top: 0.75rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
+/* Actionable Filter Buttons */
 .sdv-filter-btn {
     font-size: 0.8rem;
     font-weight: 700;
     min-height: 40px;
     padding: 0.4rem 1rem;
-    border-radius: 999px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 .sdv-filter-btn-active {
-    background: #1d4ed8;
+    background: var(--cruk-pink);
     color: #ffffff;
-    box-shadow: 0 2px 6px rgba(29, 78, 216, 0.3);
+    box-shadow: 0 2px 6px rgba(209, 10, 111, 0.3);
 }
 .sdv-filter-btn-inactive {
     background: #e2e8f0;
-    color: #1e293b;
+    color: var(--cruk-dark-text);
 }
 .sdv-filter-btn-inactive:hover {
     background: #cbd5e1;
-    color: #0f172a;
+    color: #000000;
 }
 
-/* Section Block */
+/* Section Container */
 .sdv-section {
     background: #ffffff;
-    border: 1px solid #cbd5e1;
+    border: 1px solid var(--cruk-border);
     border-radius: 18px;
     overflow: hidden;
     margin-bottom: 2rem;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-.sdv-section-btn {
+/* Static Section Header (Not a Button, Non-Interactive) */
+.sdv-section-header {
     width: 100%;
-    background: #0f172a;
+    background: var(--cruk-blue);
     color: #ffffff;
     padding: 1.25rem 1.5rem;
     display: flex;
@@ -332,11 +432,10 @@
     justify-content: space-between;
     border: none;
     text-align: left;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-.sdv-section-btn:hover, .sdv-section-btn:focus-visible {
-    background: #1e293b;
+    user-select: text;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 .sdv-section-name {
@@ -352,7 +451,26 @@
     margin-top: 0.25rem;
 }
 
-/* Property Row */
+/* Nested Sub-Section Header Card */
+.sdv-subsection-header {
+    background: #EBF3FA;
+    border-left: 4px solid var(--cruk-blue);
+    padding: 0.85rem 1.25rem;
+    margin: 1.25rem 1.25rem 0.5rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sdv-subsection-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cruk-darkblue);
+    margin: 0;
+}
+
+/* Property Row Card */
 .sdv-property-card {
     padding: 1.5rem;
     border-bottom: 1px solid #e2e8f0;
@@ -360,6 +478,9 @@
     flex-direction: column;
     gap: 0.85rem;
     transition: background 0.15s ease;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 .sdv-property-card:last-child {
     border-bottom: none;
@@ -368,75 +489,99 @@
     background: #f8fafc;
 }
 
+/* Property Header - Strict Wrapping to Prevent Overflow */
 .sdv-prop-header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
+/* Non-Interactive Monospace Code Path Tag (Strict Wrapping) */
 .sdv-prop-path {
     font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    color: #1e40af;
-    background: #eff6ff;
-    border: 1px solid #bfdbfe;
-    padding: 0.25rem 0.6rem;
-    border-radius: 8px;
+    color: var(--cruk-blue);
+    background: #EBF3FA;
+    border: 1px solid #B3D1ED;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: default;
+    max-width: 100%;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .sdv-prop-title {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #334155;
+    color: var(--cruk-dark-text);
 }
 
-/* Badges (WCAG AA Compliant High Contrast Colors) */
+/* Non-Interactive Flat Status Badges (Not Buttons) */
 .sdv-badge {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 800;
-    padding: 0.25rem 0.65rem;
-    border-radius: 999px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    cursor: default;
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    box-sizing: border-box;
 }
 
 .sdv-badge-req {
     background: #fef2f2;
-    color: #991b1b; /* WCAG AAA Contrast */
+    color: var(--cruk-pink);
     border: 1px solid #fca5a5;
+    border-left: 3px solid var(--cruk-pink);
 }
 
 .sdv-badge-opt {
     background: #f1f5f9;
-    color: #334155;
+    color: var(--cruk-dark-text);
     border: 1px solid #cbd5e1;
 }
 
 .sdv-badge-type {
     font-family: 'Fira Code', monospace;
     background: #f5f3ff;
-    color: #5b21b6; /* WCAG AAA Contrast */
+    color: var(--cruk-blue);
     border: 1px solid #c4b5fd;
     text-transform: lowercase;
 }
 
 .sdv-badge-override {
     background: #fffbeb;
-    color: #78350f; /* WCAG AAA Contrast */
+    color: #b45309;
     border: 1px solid #fcd34d;
+    border-left: 3px solid #d97706;
 }
 
-/* Guidance Box */
+/* Guidance Callout Box */
 .sdv-guidance-box {
-    background: #eff6ff;
-    border-left: 5px solid #2563eb;
-    border-radius: 0 12px 12px 0;
+    background: #EBF3FA;
+    border-left: 5px solid var(--cruk-blue);
+    border-radius: 0 8px 8px 0;
     padding: 1rem 1.25rem;
     font-size: 0.85rem;
-    color: #1e3a8a;
+    color: var(--cruk-darkblue);
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
 }
 
 .sdv-guidance-head {
@@ -444,59 +589,73 @@
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: #1e40af;
+    color: var(--cruk-blue);
     margin-bottom: 0.4rem;
 }
 
-/* Pattern Box */
+/* Pattern Code Box - Horizontal Scroll Allowed for Long Regex */
 .sdv-pattern-box {
-    background: #0f172a;
+    background: var(--cruk-darkblue);
     color: #f8fafc;
     padding: 0.75rem 1rem;
-    border-radius: 10px;
+    border-radius: 8px;
     font-family: 'Fira Code', monospace;
     font-size: 0.85rem;
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
 }
 
 .sdv-pattern-label {
     color: #fbbf24;
     font-weight: 700;
+    flex-shrink: 0;
 }
 
-/* Enums */
+/* Non-Interactive Enum Tags (Not Buttons) */
 .sdv-enum-container {
     background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 12px;
+    border: 1px solid var(--cruk-border);
+    border-radius: 8px;
     padding: 0.85rem 1rem;
     font-size: 0.85rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .sdv-enum-tag {
     font-family: 'Fira Code', monospace;
     background: #ffffff;
     border: 1px solid #94a3b8;
-    color: #0f172a;
-    padding: 0.2rem 0.5rem;
-    border-radius: 6px;
+    color: var(--cruk-dark-text);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
     font-size: 0.8rem;
     display: inline-block;
     margin: 0.2rem;
+    cursor: default;
+    word-break: break-all;
 }
 
-/* Examples */
+/* Examples Box */
 .sdv-example-box {
     background: #f1f5f9;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 0.75rem 1rem;
     font-size: 0.85rem;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
 }
+
 .sdv-example-code {
     font-family: 'Fira Code', monospace;
-    color: #0f172a;
+    color: var(--cruk-dark-text);
     display: block;
     margin-top: 0.25rem;
+    white-space: pre-wrap;
+    word-break: break-all;
 }
