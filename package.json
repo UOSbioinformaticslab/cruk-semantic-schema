@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "CRUK Semantic Schema and HDRUK Base Schema Documentation Viewer",
   "main": "semanticSchema.json",
+  "exports": {
+    ".": "./semanticSchema.json",
+    "./semanticSchema.json": "./semanticSchema.json",
+    "./src/SchemaDocViewer": "./src/SchemaDocViewer.jsx",
+    "./src/SchemaDocViewer.jsx": "./src/SchemaDocViewer.jsx"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
