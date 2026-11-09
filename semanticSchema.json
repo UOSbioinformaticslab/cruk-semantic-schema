@@ -3,7 +3,7 @@
         "demographicFrequency": ["ethnicity"],
         "provenance": ["temporal"],
         "temporal": ["startDate", "endDate", "timeLag"],
-        "coverage": ["typicalAgeRangeMin", "typicalAgeRangeMax", "datasetCompleteness"],
+        "coverage": ["materialType","typicalAgeRangeMin", "typicalAgeRangeMax", "datasetCompleteness"],
         "dataCustodian": ["identifier", "name", "contactPoint", "description"],
         "accessibility": ["access"],
         "access": ["accessRights"]
@@ -11,20 +11,19 @@
     "visibleSections": [
       "welcome",
       "version",
-      "projectGrants",
       "summary",
+      "accessibility",
       "documentation",
+      "datasetFilters",
       "structuralMetadata",
       "otherDataTypes",
       "erd",
       "observations",
       "demographicFrequency",
-      "omics",
       "provenance",
-      "accessibility",
       "coverage",
       "enrichmentAndLinkage",
-      "datasetFilters"
+      "omics"
     ],
     "summaryOrder": ["title", "leadResearcher", "leadResearchInstitute", "contactPoint", "doiName", "abstract", "accessRights",
       "dataCustodian", "populationSize", "keywords", "datasetAliases"],
@@ -414,7 +413,7 @@
           "guidance": "Datasets in the CRUK datahub are filtered according to three criteria: type of cancer, type of data and access conditions.\\n Use ICD-O terminology to categorise each of the cancers covered, and keywords to include further important details. This is automatically translated to CRUK and TCGA equivalents."
         },
         "accessibility": {
-          "title": "Data Access, Usage & Formatting",
+          "title": "Accessing the Dataset",
           "guidance": "Upload information on how researchers can gain access to the data and access restrictions."
         },
         "enrichmentAndLinkage": {
