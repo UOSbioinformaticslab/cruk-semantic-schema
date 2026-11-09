@@ -410,7 +410,7 @@
           "guidance": "Use this section to upload documentation setting out the background to your dataset including details of the methodologies. This can also include associated media."
         },
         "datasetFilters": {
-          "guidance": "Datasets in the CRUK datahub are filtered according to three criteria: type of cancer, type of data and access conditions.\\n Use ICD-O terminology to categorise each of the cancers covered, and keywords to include further important details. This is automatically translated to CRUK and TCGA equivalents."
+          "guidance": " CHANGED Datasets in the CRUK datahub are filtered according to three criteria: type of cancer, type of data and access conditions.\\n Use ICD-O terminology to categorise each of the cancers covered, and keywords to include further important details. This is automatically translated to CRUK and TCGA equivalents."
         },
         "accessibility": {
           "title": "Accessing the Dataset",
