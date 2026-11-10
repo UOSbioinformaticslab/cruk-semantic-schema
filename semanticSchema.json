@@ -423,7 +423,7 @@
 
         },
         "otherDataTypes": {
-          "guidance": "Datasets often now include audio-visual data such as recordings and images. Please list, describe and identify the format."
+          "guidance": "Datasets often now include audio-visual data such as recordings, video and images. Please list, describe and identify the format."
         },
         "coverage": {
           "guidance": "Include the minimum and maximum age of participants, as well as a URL where a researcher can learn more about the completeness of the dataset."
